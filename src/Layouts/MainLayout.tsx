@@ -1,15 +1,15 @@
 import React, { ReactElement } from "react";
 import { Outlet } from "react-router-dom";
+import { MainNav } from "../components/main-nav";
 
 const MainLayout = (): ReactElement => {
   return (
-    <div>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non,
-        excepturi.
-      </h1>
+    <>
+      <div className="sticky top-0 flex items-center justify-between bg-slate-950 text-white">
+        <MainNav />
+      </div>
       <Outlet />
-    </div>
+    </>
   );
 };
 

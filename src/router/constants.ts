@@ -10,8 +10,8 @@ const PathEndpointConstants = {
 const PathConstants = {
   ROOT: `${PathEndpointConstants.ROOT}`,
   OVERVIEW: `${PathEndpointConstants.OVERVIEW}`,
-  ERROR: `/${PathEndpointConstants.ANALYSIS}`,
-  ANALYSIS: `/${PathEndpointConstants.ERROR}`,
+  ERROR: `/${PathEndpointConstants.ERROR}`,
+  ANALYSIS: `/${PathEndpointConstants.ANALYSIS}`,
   NOTIFICATIONS: `/${PathEndpointConstants.NOTIFICATIONS}`,
   SETTINGS: `/${PathEndpointConstants.SETTINGS}`,
 } as const;

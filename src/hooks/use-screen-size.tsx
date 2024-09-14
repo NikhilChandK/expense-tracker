@@ -21,6 +21,10 @@ function useScreenSize() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  return { ...screenSize, isMobile: screenSize.width < 768 };
+  return {
+    ...screenSize,
+    isTablet: screenSize.width > 640 && screenSize.width < 1024,
+    isMobile: screenSize.width < 640,
+  };
 }
 export default useScreenSize;

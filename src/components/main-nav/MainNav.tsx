@@ -1,13 +1,26 @@
-import React from "react";
+import { ReactElement } from "react";
 import { NavLink } from "react-router-dom";
+import { docsConfig } from "../../config/docs";
+import { siteConfig } from "../../config/site";
+import useScreenSize from "../../hooks/use-screen-size";
+import { MobileMenu } from "../mobile-menu";
 
-const MainNav = () => {
+const MainNav = (): ReactElement => {
+  const { isMobile } = useScreenSize();
   return (
-    <h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae
-      sed modi unde mollitia. Odio error quae dicta, et reiciendis doloribus,
-      accusamus culpa vitae, soluta sed animi reprehenderit veniam adipisci.
-    </h1>
+    <>
+      <div className="mx-5 my-0 flex items-center justify-between gap-8">
+        <span className="cursor-pointer p-4">{siteConfig.name}</span>
+        <nav className="hidden sm:flex">
+          {docsConfig.mainNav.map((item) => (
+            <NavLink to={`${item.href}`} key={item.title} className={"p-4"}>
+              {item.title}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+      {isMobile && <MobileMenu />}
+    </>
   );
 };
 
