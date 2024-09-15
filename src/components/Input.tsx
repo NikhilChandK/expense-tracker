@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 type InputProps = {
-  type?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  children?: React.ReactNode;
-};
+  type?: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  children?: React.ReactNode
+}
 const Input = (props: InputProps) => {
   return (
     <input
@@ -12,7 +12,7 @@ const Input = (props: InputProps) => {
       value={props.value}
       onChange={(e) => props.onChange(e)}
     />
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

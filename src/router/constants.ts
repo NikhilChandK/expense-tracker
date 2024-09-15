@@ -1,11 +1,11 @@
 const PathEndpointConstants = {
-  ROOT: "/",
-  OVERVIEW: "overview",
-  ERROR: "error",
-  ANALYSIS: "analysis",
-  NOTIFICATIONS: "notifications",
-  SETTINGS: "settings",
-} as const;
+  ROOT: '/',
+  OVERVIEW: 'overview',
+  ERROR: 'error',
+  ANALYSIS: 'analysis',
+  NOTIFICATIONS: 'notifications',
+  SETTINGS: 'settings',
+} as const
 
 const PathConstants = {
   ROOT: `${PathEndpointConstants.ROOT}`,
@@ -14,6 +14,6 @@ const PathConstants = {
   ANALYSIS: `/${PathEndpointConstants.ANALYSIS}`,
   NOTIFICATIONS: `/${PathEndpointConstants.NOTIFICATIONS}`,
   SETTINGS: `/${PathEndpointConstants.SETTINGS}`,
-} as const;
+} as const
 
-export { PathEndpointConstants, PathConstants };
+export { PathEndpointConstants, PathConstants }

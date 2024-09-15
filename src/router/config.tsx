@@ -1,7 +1,6 @@
-import { RouteObject } from "react-router-dom";
-import MainLayout from "../Layouts/MainLayout";
-import { PathConstants } from "./constants";
-import RouteGuard from "./route-guard";
+import { RouteObject } from 'react-router-dom'
+import MainLayout from '../Layouts/MainLayout'
+import { PathConstants } from './constants'
 
 const routes: RouteObject[] = [
   {
@@ -29,7 +28,7 @@ const routes: RouteObject[] = [
       },
     ],
   },
-];
+]
 //   },
 // ];
-export { routes };
+export { routes }

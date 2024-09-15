@@ -1,29 +1,29 @@
-import { PathConstants } from "../router/constants";
-import { MainNavItem, SideBarNavItem } from "../types/nav";
+import { PathConstants } from '../router/constants'
+import { MainNavItem, SideBarNavItem } from '../types/nav'
 
 export interface DocsConfig {
-  mainNav: MainNavItem[];
-  sideNav: SideBarNavItem[];
+  mainNav: MainNavItem[]
+  sideNav: SideBarNavItem[]
 }
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "OverView",
+      title: 'OverView',
       href: PathConstants.OVERVIEW,
     },
     {
-      title: "Analysis",
+      title: 'Analysis',
       href: PathConstants.ANALYSIS,
     },
   ],
   sideNav: [
     {
-      title: "Notifications",
+      title: 'Notifications',
       href: PathConstants.NOTIFICATIONS,
     },
     {
-      title: "settings",
+      title: 'settings',
       href: PathConstants.SETTINGS,
     },
   ],
-};
+}

@@ -1,21 +1,31 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "target": "es6", // Use modern ES6
+    "module": "es6",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "allowJs": false, // Disable JS unless necessary
+    "skipLibCheck": true, // Skipping lib checks for faster build times
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": true, // Enforces all strict type checks
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src/**/*"],
-  "exclude": ["node_modules", "dist", "server", "build", "coverage"]
+  "include": [
+    "./src/**/*" // Covers all .ts, .tsx, .js, .jsx files in src folder
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "server" // If the server folder is not related to TypeScript code
+  ]
 }

@@ -1,6 +1,6 @@
-import React, { ReactElement } from "react";
-import { Outlet } from "react-router-dom";
-import { MainNav } from "../components/main-nav";
+import React, { ReactElement } from 'react'
+import { Outlet } from 'react-router-dom'
+import { MainNav } from '../components/main-nav'
 
 const MainLayout = (): ReactElement => {
   return (
@@ -10,7 +10,7 @@ const MainLayout = (): ReactElement => {
       </div>
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout
