@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const RouteGuard = () => {
-  return <div>route-guard</div>
-}
+    return <div>route-guard</div>;
+};
 
-export default RouteGuard
+export default RouteGuard;
