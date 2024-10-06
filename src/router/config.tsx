@@ -1,6 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import MainLayout from '../Layouts/MainLayout';
 import { PathConstants } from './constants';
+import { Login } from '../components/login';
 
 const routes: RouteObject[] = [
     {
@@ -10,6 +11,10 @@ const routes: RouteObject[] = [
         //   {
         element: <MainLayout />,
         children: [
+            {
+                index: true,
+                element: <Login />,
+            },
             {
                 path: PathConstants.OVERVIEW,
                 element: <h1>OVERVIEW</h1>,

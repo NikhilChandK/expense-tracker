@@ -5,6 +5,7 @@ const PathEndpointConstants = {
     ANALYSIS: 'analysis',
     NOTIFICATIONS: 'notifications',
     SETTINGS: 'settings',
+    LOGIN: 'login',
 } as const;
 
 const PathConstants = {
@@ -14,6 +15,7 @@ const PathConstants = {
     ANALYSIS: `/${PathEndpointConstants.ANALYSIS}`,
     NOTIFICATIONS: `/${PathEndpointConstants.NOTIFICATIONS}`,
     SETTINGS: `/${PathEndpointConstants.SETTINGS}`,
+    LOGIN: `/${PathEndpointConstants.LOGIN}`,
 } as const;
 
 export { PathEndpointConstants, PathConstants };
