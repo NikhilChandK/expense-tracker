@@ -12,7 +12,7 @@ export interface User {
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        login: builder.mutation<{ token: string; user: User }, any>({
+        login: builder.mutation<{ jwtToken: string; user: User }, any>({
             query: (credentials: any) => ({
                 url: endpoints.LOGIN,
                 method: 'POST',

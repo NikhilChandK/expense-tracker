@@ -4,12 +4,12 @@ import { User } from '../../../services/auth/auth';
 
 const initialState = {
     user: null,
-    token: null,
+    jwtToken: null,
     refreshToken: null,
-    isAuthenticated: false,
+    isAuthenticated: true,
 } as {
     user: null | User;
-    token: string | null;
+    jwtToken: string | null;
     refreshToken: string | null;
     isAuthenticated: boolean;
 };
@@ -20,25 +20,29 @@ const authSlice = createSlice({
     reducers: {
         logout: () => initialState,
         setCredentials: (state, { payload }) => {
-            state.token = payload.token;
+            state.jwtToken = payload.jwtToken;
             state.refreshToken = payload.refreshToken;
             state.user = payload.user;
-            state.isAuthenticated = true;
+            state.isAuthenticated = false;
         },
     },
 });
 
 const { logout, setCredentials } = authSlice.actions;
 
-const auth = authSlice.reducer;
+const authReducer = authSlice.reducer;
 
-const selectIsAuthenticated = (state: RootState) => state.auth.isAuthenticated;
 const selectCurrentUser = (state: RootState) => state.auth.user;
+const selectIsAuthenticated = (state: RootState) => state.auth.isAuthenticated;
+const selectJwtToken = (state: RootState) => state.auth.jwtToken;
+const selectRefreshToken = (state: RootState) => state.auth.refreshToken;
 
 export {
     logout,
     setCredentials,
-    auth,
-    selectIsAuthenticated,
+    authReducer,
     selectCurrentUser,
+    selectIsAuthenticated,
+    selectJwtToken,
+    selectRefreshToken,
 };

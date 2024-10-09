@@ -9,7 +9,7 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true, // Enforces all strict type checks
-        "forceConsistentCasingInFileNames": true,
+        "forceConsistentCasingInFileNames": false,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,

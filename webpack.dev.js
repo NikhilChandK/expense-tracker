@@ -13,6 +13,7 @@ module.exports = merge(common, {
         hot: true, // Enable Hot Module Replacement (HMR)
         open: true, // Open the browser automatically
         compress: true, // Enable GZIP compression
+        liveReload: true,
     },
     plugins: [
         new ReactRefreshWebpackPlugin(), // For React HMR

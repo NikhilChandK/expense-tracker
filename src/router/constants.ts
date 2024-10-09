@@ -1,3 +1,5 @@
+import { filter } from '../lib/helpers';
+
 const PathEndpointConstants = {
     ROOT: '/',
     OVERVIEW: 'overview',
@@ -18,4 +20,29 @@ const PathConstants = {
     LOGIN: `/${PathEndpointConstants.LOGIN}`,
 } as const;
 
-export { PathEndpointConstants, PathConstants };
+const ProtectedPathConstants = filter(
+    PathConstants,
+    (value) =>
+        value === PathConstants.OVERVIEW ||
+        value === PathConstants.ANALYSIS ||
+        value === PathConstants.NOTIFICATIONS ||
+        value === PathConstants.SETTINGS
+);
+
+const PrivatePathConstants = filter(
+    PathConstants,
+    (value) =>
+        value === PathConstants.OVERVIEW ||
+        value === PathConstants.ANALYSIS ||
+        value === PathConstants.SETTINGS // Maybe only certain users can access settings
+);
+
+type Path = (typeof PathConstants)[keyof typeof PathConstants];
+
+export {
+    PathEndpointConstants,
+    PathConstants,
+    ProtectedPathConstants,
+    PrivatePathConstants,
+    type Path,
+};

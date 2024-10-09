@@ -6,10 +6,10 @@ import {
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { useDispatch, useSelector } from 'react-redux';
 import { api } from '../services/api';
-import { auth } from './features/auth/authSlice';
+import { authReducer } from './features/auth/authSlice';
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(api, { auth });
+const rootReducer = combineSlices(api, { auth: authReducer });
 // The store setup is wrapped in `createStore` to allow reuse
 // when setting up tests that need the same store config
 export const createStore = (

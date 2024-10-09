@@ -1,13 +1,11 @@
-import React from 'react';
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from '../card';
-import { Button } from '../button';
+import { LoginForm } from './LoginForm';
 
 const Login = () => {
     return (
@@ -19,11 +17,9 @@ const Login = () => {
                         Please enter login details.
                     </CardDescription>
                 </CardHeader>
-                <CardContent>Hello</CardContent>
-                <CardFooter className="flex justify-between">
-                    <Button variant="outline">Cancel</Button>
-                    <Button>Sign in</Button>
-                </CardFooter>
+                <CardContent>
+                    <LoginForm />
+                </CardContent>
             </Card>
         </div>
     );
