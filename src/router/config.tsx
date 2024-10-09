@@ -1,5 +1,5 @@
 import { RouteObject } from 'react-router-dom';
-import MainLayout from '../Layouts-temp/MainLayout';
+import MainLayout from '../layouts/MainLayout';
 import { PathConstants } from './constants';
 import { Login } from '../components/login';
 import { RouteGuard } from './route-guard';
