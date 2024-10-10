@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/use-auth';
 import { ReactElement } from 'react';
 
 const RouteGuard = (): ReactElement => {
-    const [isAuthenticated, , jwtToken, refreshToken] = useAuth();
+    const [, jwtToken, refreshToken] = useAuth();
     const [path, search, , protectedRoute, privateRoute] = useRouteGaurd();
     const locationRelativePath = `${path}${search}`;
     const privateRouteWithNotokens = privateRoute && !jwtToken && !refreshToken;
@@ -20,7 +20,7 @@ const RouteGuard = (): ReactElement => {
         );
     }
     // If the route is protected and the user is authenticated, redirect to the original location
-    if (protectedRoute && jwtToken && isAuthenticated) {
+    if (protectedRoute && jwtToken) {
         return <Navigate to={locationRelativePath} replace={true} />;
     }
     /// In all other cases (public route, protected route but not logged in), render the child routes

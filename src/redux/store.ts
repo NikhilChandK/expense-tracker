@@ -1,26 +1,22 @@
-import {
-    combineSlices,
-    configureStore,
-    ConfigureStoreOptions,
-} from '@reduxjs/toolkit';
+import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { useDispatch, useSelector } from 'react-redux';
 import { api } from '../services/api';
 import { authReducer } from './features/auth/authSlice';
-// `combineSlices` automatically combines the reducers using
-// their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(api, { auth: authReducer });
 // The store setup is wrapped in `createStore` to allow reuse
 // when setting up tests that need the same store config
 export const createStore = (
     options?: ConfigureStoreOptions['preloadedState'] | undefined
 ) => {
     const store = configureStore({
-        reducer: rootReducer,
+        reducer: {
+            [api.reducerPath]: api.reducer,
+            auth: authReducer,
+        },
         // Adding the api middleware enables caching, invalidation, polling,
         // and other useful features of `rtk-query`.
         middleware: (getDefaultMiddleware) => {
-            return getDefaultMiddleware().concat();
+            return getDefaultMiddleware().concat(api.middleware);
         },
         ...options,
     });

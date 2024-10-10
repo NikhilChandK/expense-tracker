@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -62,5 +63,14 @@ module.exports = {
             filename: 'index.html',
         }),
         new LodashModuleReplacementPlugin(),
+        new CopyWebpackPlugin({
+            // Add CopyWebpackPlugin to the plugins array
+            patterns: [
+                {
+                    from: 'src/mockServiceWorker.js',
+                    to: '.',
+                }, // Copy the service worker to output
+            ],
+        }),
     ],
 };

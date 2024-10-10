@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es6", // Use modern ES6
-        "module": "es6",
+        "target": "ES2022", // Use modern ES6
+        "module": "ES2022",
         "outDir": "./dist/",
         "sourceMap": true,
         "allowJs": false, // Disable JS unless necessary
